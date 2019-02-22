@@ -48,26 +48,18 @@ const sumOfArray = (array) => {
   return total
 }
 
-// const sumOfArray = (array) => {
-//   let newArray = array.reduce((acc, currentValue) => {
-//     return acc + currentValue
-//   })
-//   return newArray
-// }
-
-// const sumOfArray = (numbers) => {
-//   const getSum = (total, num) => {
-//     return total + num
-//   }
-//   return numbers.reduce(getSum)
-// }
-
 /**
  * Write a function isVowel() that takes a character (i.e. a string of length 1)
  * and returns true if it is a vowel, false otherwise.
  */
 
-// ...
+const isVowel = (letter) => {
+  if (letter.length == 1) {
+    let vowels = 'aeiou'
+    let isVowel = vowels.indexOf(letter.toLowerCase()) >= 0 ? true : false
+    return isVowel
+  }
+}
 
 /**
  * Write a function rovarspraket() that will translate
