@@ -70,7 +70,21 @@ const isVowel = (letter) => {
  * return the string "tothohisos isos fofunon".
  */
 
-// ...
+const rovarspraket = (string) => {
+  let vowels = 'aeiou'
+  let stringSplit = string.split('')
+  let newString = ''
+  console.log(stringSplit)
+  for (let i = 0; i < string.length; i++) {
+    let current = string.charAt(i)
+    if (vowels.indexOf(current) != -1) {
+      newString = newString + current
+    } else {
+      newString = newString + current + 'o' + current
+    }
+  }
+  return newString
+}
 
 /**
  * Define a function reverse() that computes
@@ -90,7 +104,25 @@ const reverse = (string) => {
  * i.e. findLongestWord("book dogs") should return "book"
  */
 
-// ...
+const findLongestWord = (string) => {
+  let longestWord = string.split(' ').reduce((longest, current) => {
+    return current.length > longest.length ? current : longest
+  })
+  return longestWord
+}
+
+// const findLongestWord = (string) => {
+//   let stringSplit = string.split(' ')
+//   let longestWord = ''
+//   console.log(stringSplit)
+//   for (var i = 0; i <= stringSplit.length; i++) {
+//     if (stringSplit[i].length > longestWord) {
+//       longestWord = stringSplit[i]
+//       console.log(longestWord)
+//     }
+//   }
+//   return longestWord
+// }
 
 /**
  * NOTE: Don't modify anything below this line...
@@ -134,12 +166,12 @@ test('isVowel()', (t) => {
   t.is(isVowel('E'), true)
 })
 
-// test('rovarspraket()', (t) => {
-//   t.is(rovarspraket('a'), 'a')
-//   t.is(rovarspraket('b'), 'bob')
-//   t.is(rovarspraket('cat'), 'cocatot')
-//   t.is(rovarspraket('javascript'), 'jojavovasoscocroripoptot')
-// })
+test('rovarspraket()', (t) => {
+  t.is(rovarspraket('a'), 'a')
+  t.is(rovarspraket('b'), 'bob')
+  t.is(rovarspraket('cat'), 'cocatot')
+  t.is(rovarspraket('javascript'), 'jojavovasoscocroripoptot')
+})
 
 test('reverse()', (t) => {
   t.is(reverse('books'), 'skoob')
